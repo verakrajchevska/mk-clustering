@@ -1,0 +1,47 @@
+paths:
+  data_dir: data
+  ud_dir: data/ud
+  raw_dir: data/raw
+  clean_dir: data/clean
+  embeddings_dir: embeddings
+  baseline_dir: embeddings/baseline
+  trained_dir: embeddings/trained
+  clusters_dir: clusters
+  eval_dir: eval
+
+corpus:
+  raw_text: data/raw/leipzig_all.txt   
+  min_line_len: 20
+  lowercase: true
+  sample_lines: 1000000  
+  lang_filter: true 
+
+
+lemma:
+  backend: stanza   # or "classla" or "udpipe"
+  use_gpu: false
+  batch_sentences: 1
+
+embeddings:
+  dim: 300
+  min_count: 5
+  epoch: 10
+  lr: 0.05
+  ws: 5
+  threads: 8
+  models: ["cbow", "skipgram"]
+
+cluster:
+  k_values: [200, 400, 800, 1200, 2000]
+  max_iter: 100
+  num_cores: 4
+  normalize: true
+  max_words: 200000 
+  restrict_path: data/clean/top200k.txt        
+
+
+eval:
+  silhouette_sample: 50000
+  topk_k: [5, 10]
+  probes_per_label: 300
+  random_seed: 42

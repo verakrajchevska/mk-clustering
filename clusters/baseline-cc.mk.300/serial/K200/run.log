@@ -1,0 +1,12 @@
+vec=embeddings/baseline/cc.mk.300.vec.gz
+vecslug=baseline-cc.mk.300
+K=200
+method=serial
+N=35729
+D=300
+normed=1
+iterations=58
+max_iter=100
+secs=36.77
+max_words=200000
+restrict_path=data/clean/top200k.txt

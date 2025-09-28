@@ -1,0 +1,89 @@
+# OS / Editor / Misc
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+
+# VS Code / JetBrains
+.vscode/
+.idea/
+*.code-workspace
+
+# Python build / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Packaging / build
+build/
+dist/
+.eggs/
+*.egg-info/
+wheelhouse/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+# Raw and cleaned corpora
+data/raw/**
+data/clean/mk_corpus.txt
+data/clean/mk_corpus.lemma.txt
+data/clean/mk_corpus*.txt
+
+# Keeping the vocabulary cut used in the paper
+!data/clean/top200k.txt
+
+# Embeddings
+embeddings/**
+!embeddings/baseline/
+!embeddings/trained/
+!embeddings/baseline/.gitkeep
+!embeddings/trained/.gitkeep
+
+
+# Clusters
+clusters/**
+!clusters/**/
+!clusters/**/assignments.csv
+!clusters/**/run.log
+!clusters/**/meta.yaml
+
+# Reports
+
+# Figures
+reports/figures/zoomed/
+
+# Tables
+reports/tables/**
+!reports/tables/
+!reports/tables/**/*.csv
+
+# Local configs / secrets
+*.env
+*.env.*
+.envrc
+
+# Project-specific extras
+mkclustering.egg-info/

@@ -1,0 +1,13 @@
+vec=embeddings/baseline/cc.mk.300.vec.gz
+vecslug=baseline-cc.mk.300
+K=800
+method=parallel
+N=35729
+D=300
+normed=1
+iterations=34
+num_cores=4
+max_iter=100
+secs=34.69
+max_words=200000
+restrict_path=data/clean/top200k.txt

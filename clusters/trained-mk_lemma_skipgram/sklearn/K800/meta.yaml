@@ -1,0 +1,13 @@
+tool: sklearn.KMeans
+algorithm: elkan
+seed: 42
+max_iter: 300
+tol: 0.0001
+K: 800
+n_jobs_env: 4
+vec_path: embeddings/trained/mk_lemma_skipgram.vec
+n_words: 21857
+dim: 300
+runtime_sec: 10.973095893859863
+normalized_inputs: true
+normalized_centroids: true

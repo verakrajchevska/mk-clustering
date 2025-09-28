@@ -1,0 +1,13 @@
+vec=embeddings/trained/mk_skipgram.vec
+vecslug=trained-mk_skipgram
+K=2000
+method=sklearn
+N=84072
+D=300
+normed=1
+iterations=36
+num_cores=4
+max_iter=300
+secs=93.76
+max_words=200000
+restrict_path=

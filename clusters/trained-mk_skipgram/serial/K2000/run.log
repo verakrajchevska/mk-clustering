@@ -1,0 +1,12 @@
+vec=embeddings/trained/mk_skipgram.vec
+vecslug=trained-mk_skipgram
+K=2000
+method=serial
+N=33974
+D=300
+normed=1
+iterations=26
+max_iter=100
+secs=329.24
+max_words=200000
+restrict_path=data/clean/top200k.txt

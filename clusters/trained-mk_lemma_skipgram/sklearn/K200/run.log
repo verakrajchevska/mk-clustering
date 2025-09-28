@@ -1,0 +1,13 @@
+vec=embeddings/trained/mk_lemma_skipgram.vec
+vecslug=trained-mk_lemma_skipgram
+K=200
+method=sklearn
+N=21857
+D=300
+normed=1
+iterations=54
+num_cores=4
+max_iter=300
+secs=4.19
+max_words=200000
+restrict_path=
