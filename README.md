@@ -1,6 +1,6 @@
 # Macedonian Word-embedding Clustering: A Reproducible Pipeline
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/1065995902.svg)](https://doi.org/10.5281/zenodo.17220854)
 
 This repository contains a fully reproducible pipeline for cleaning a Macedonian web corpus, lemmatizing it, training fastText word embeddings (raw and lemma representations), clustering the vectors with serial, parallel, and scikit‑learn KMeans, and evaluating cluster structure with intrinsic metrics and alignment diagnostics. It also includes scripts to visualize clusters and to benchmark runtime/speedup.
 
