@@ -1,12 +1,13 @@
-# Macedonian Word-embedding Clustering: A Reproducible Pipeline
+# Accelerating Word Embedding Clustering with Parallel k-Means: A Case Study on the Macedonian Corpus
 
 [![DOI](https://zenodo.org/badge/1065995902.svg)](https://doi.org/10.5281/zenodo.17220854)
 
-This repository contains a fully reproducible pipeline for cleaning a Macedonian web corpus, lemmatizing it, training fastText word embeddings (raw and lemma representations), clustering the vectors with serial, parallel, and scikit‑learn KMeans, and evaluating cluster structure with intrinsic metrics and alignment diagnostics. It also includes scripts to visualize clusters and to benchmark runtime/speedup.
+This repository provides a fully reproducible pipeline for cleaning a Macedonian web corpus, lemmatizing it, training word embeddings (fastText; raw and lemma variants), and clustering vectors with serial, parallel, and scikit-learn K-Means. It includes intrinsic evaluation, alignment diagnostics for morphology/semantics, visualizations, and runtime benchmarking.
+
+A key contribution is a parallel k-means implementation that accelerates the assignment/update steps across CPU cores while preserving scikit-learn-compatible behavior. The code exposes a simple CLI and drop-in API, making it easy to compare serial vs. parallel clustering at different K, vector types, and hardware settings.
 
 The pipeline is packaged as a small Python module with a Typer CLI: **`mkcli`**.
 
----
 
 ## Contents
 

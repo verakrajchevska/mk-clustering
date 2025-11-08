@@ -1,7 +1,7 @@
 import typer
 from pathlib import Path          
 from mkclustering.paths import Paths
-from mkclustering import corpus, clean, lemma, embeddings, clustering, ud, metrics, probes, bench, viz
+from mkclustering import corpus, clean, lemma, embeddings, clustering, ud, metrics, bench, viz
 import pandas as pd
 import yaml
 
@@ -54,12 +54,6 @@ def eval_intrinsic(cfg: str = "configs/default.yaml"):
     metrics.run(paths, cfg)
 
 @app.command()
-def eval_probes(cfg: str = "configs/default.yaml"):
-    """Run Top-k neighbor and Odd-One-Out probes."""
-    paths = Paths(cfg)
-    probes.run(paths, cfg)
-
-@app.command()
 def bench_speed(cfg: str = "configs/default.yaml"):
     """Benchmark serial vs parallel k-means runtime/speedup."""
     paths = Paths(cfg)
@@ -106,11 +100,26 @@ def viz_cluster(
     max_words: int = typer.Option(40, help="Max words to plot"),
     algo: str = typer.Option("pca", help="pca|tsne"),
     show_centroid: bool = typer.Option(False, help="Show centroid marker"),
+    ext: str = typer.Option("png", help="Output format: png|pdf|both"),
 ):
     paths = Paths(cfg)
     kdir = Path(paths.clusters) / slug / method / f"K{K}"
-    out = Path("reports/figures") / f"cluster_{slug}_{method}_K{K}_cid{cid}_{algo}.png"
-    viz.plot_single_cluster(kdir, cid, out, max_words=max_words, algo=algo, show_centroid=show_centroid)
+    stem = f"cluster_{slug}_{method}_K{K}_cid{cid}_{algo}"
+
+    from mkclustering import viz
+    outdir = Path("reports/figures")
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    def _save_one(suffix):
+        out = outdir / f"{stem}.{suffix}"
+        viz.plot_single_cluster(
+            kdir, cid, out, max_words=max_words, algo=algo, show_centroid=show_centroid
+        )
+
+    if ext == "both":
+        _save_one("png"); _save_one("pdf")
+    else:
+        _save_one(ext)
 
 
 @app.command()
