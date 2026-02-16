@@ -128,7 +128,7 @@ eval:
 
 ### Leipzig Macedonian web text
 Download Macedonian web data from the Leipzig Corpora Collection:  
-<https://wortschatz.uni-leipzig.de/en/download/Macedonian>
+<https://wortschatz.uni-leipzig.de/en/download/mkd>
 
 For reproducibility, concatenate or convert the 1M slice you choose to a single UTF‑8 text file and place it at:
 ```
