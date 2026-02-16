@@ -124,7 +124,7 @@ eval:
 
 ---
 
-## Data: Leipzig + Universal Dependencies (UD)
+## Data: Leipzig & Universal Dependencies (UD)
 
 ### Leipzig Macedonian web text
 Download Macedonian web data from the Leipzig Corpora Collection:  
@@ -149,9 +149,9 @@ Used for POS-based metrics and MSI.
 
 ## Pipeline overview
 
-1. **Clean** (deduplicate, Unicode NFKC, strip URLs/emails/punct, lowercase, optional language filter) → `data/clean/mk_corpus.txt`
-2. **Lemmatize** with CLASSLA‑Stanza (Macedonian model) → `data/clean/mk_corpus.lemma.txt`
-3. **Train fastText** (raw + lemma) → `embeddings/trained/*.bin/.vec`
+1. **Clean** (deduplicate, Unicode NFKC, strip URLs/emails/punct, lowercase, optional language filter) - `data/clean/mk_corpus.txt`
+2. **Lemmatize** with CLASSLA‑Stanza (Macedonian model) - `data/clean/mk_corpus.lemma.txt`
+3. **Train fastText** (raw & lemma) - `embeddings/trained/*.bin/.vec`
 4. **Cluster** with:
    - serial (scikit‑learn KMeans)
    - parallel (multiprocessing master–worker, cosine‑equivalent on L2‑normalized vectors)
