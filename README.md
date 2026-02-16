@@ -31,7 +31,7 @@ python3 -m venv .venv && source .venv/bin/activate
 
 # 2) Install requirements
 pip install -U pip
-pip install -e ".[all]"          # or: pip install -r requirements.txt if provided
+pip install -e ".[all]"
 
 # 3) Put raw Leipzig text here (see below for how to obtain it)
 #    data/raw/leipzig_all.txt  (UTF-8 plain text, one sentence/line is fine)
